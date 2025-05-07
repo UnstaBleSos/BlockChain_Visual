@@ -30,7 +30,8 @@ export class BlockchainService {
       timestamp: Date.now(),
       transactions: [],
       previousHash: previousHash,
-      hash: this.calculateBlockHash(index, previousHash, Date.now())
+      hash: this.calculateBlockHash(index, previousHash, Date.now()),
+      nonce:'0'
     };
 
     this.blockchain.push(block);
@@ -55,3 +56,4 @@ export class BlockchainService {
     this.addTransaction(transaction);  
   }
 }
+

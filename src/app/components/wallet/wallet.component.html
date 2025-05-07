@@ -1,8 +1,13 @@
-<button  (click)="callKeys()"   >Generate Keys</button>
-
-
-<div *ngIf="publicKey&& privateKey">
-    <p>
-        PublicKey:  <strong> {{publicKey  }}</strong>
-    </p>
-</div>
+<div class="key-generator">
+    <button (click)="callKeys()">Generate Keys</button>
+  
+    <div *ngIf="publicKey && privateKey" class="key-display">
+      <p>
+        PublicKey: <strong>{{ publicKey }}</strong>
+      </p>
+      <p>
+        PrivateKey: <strong>{{ privateKey }}</strong>
+      </p>
+    </div>
+  </div>
+  

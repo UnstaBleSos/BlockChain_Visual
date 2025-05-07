@@ -5,6 +5,9 @@ import {ec as EC} from 'elliptic'
 })
 export class WalletServiceService {
 
+  publicKey : string = ''
+  privateKey : string = ''
+
   constructor() { 
     
   }
@@ -12,10 +15,15 @@ export class WalletServiceService {
   generateKeys(){
     const ec = new EC('secp256k1')
     const key = ec.genKeyPair()
-    const publicKey = key.getPublic('hex')
-    const privateKey = key.getPrivate('hex')
+    this.publicKey = key.getPublic('hex')
+    this.privateKey = key.getPrivate('hex')
 
-    return {publicKey,privateKey}
+    return {publicKey: this.publicKey,privateKey:this.privateKey}
 
   }
+
+  getKeys(){
+    return{publicKey: this.publicKey,privateKey:this.privateKey}
+  }
+
 }

@@ -1,0 +1,8 @@
+<button  (click)="callKeys()"   >Generate Keys</button>
+
+
+<div *ngIf="publicKey&& privateKey">
+    <p>
+        PublicKey:  <strong> {{publicKey  }}</strong>
+    </p>
+</div>

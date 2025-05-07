@@ -1,0 +1,25 @@
+<div *ngIf="blockchainService" class="blockchain-container">
+    <h2 class="blockchain-title">Blockchain Transactions</h2>
+    <div *ngFor="let block of blockchainService.getChain()" class="block">
+      <h3 class="block-header">Block #{{ block.index }}</h3>
+      <div *ngFor="let tx of block.transactions" class="transaction">
+        <p class="transaction-details">
+          <span class="transaction-label">From:
+            {{ tx.transaction.fromAddress }} 
+          </span> 
+          <span class="transaction-label">To:
+            {{ tx.transaction.toAddress }} 
+          </span> 
+          <span class="transaction-label">Amount:
+            {{ tx.transaction.amount }}
+          </span>
+        </p>
+        <p class="transaction-signature">
+          <span class="transaction-label">Signature:</span> {{ tx.signature }}
+        </p>
+        <p> 
+        {{block.hash}}
+        </p>
+      </div>
+    </div>
+  </div>

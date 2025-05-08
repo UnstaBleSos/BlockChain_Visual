@@ -1,1 +1,19 @@
-<p>mining works!</p>
+<div class="mining-container">
+    <button (click)="startMining()">Start Mining</button>
+  </div>
+  
+  <div class="mining-status">
+    <div>
+      <strong>Hash Value</strong>
+      {{ block.hash }}
+    </div>
+    <div>
+      <strong>Nonce</strong>
+      {{ block.nonce }}
+    </div>
+  </div>
+
+  <div>
+    {{transactionInfo}}
+  </div>
+  

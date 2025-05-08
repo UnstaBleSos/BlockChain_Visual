@@ -1,0 +1,56 @@
+.mining-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  
+    button {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #28a745; // Start button color (green)
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+      box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+  
+      &:hover {
+        background-color: #218838;
+      }
+  
+      &:active {
+        transform: scale(0.97);
+      }
+  
+      &:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  .mining-status {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+  
+    strong {
+      display: block;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+  
+    div {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      min-width: 250px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      word-break: break-word;
+    }
+  }
+  

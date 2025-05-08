@@ -29,7 +29,6 @@ export class TransactionComponent {
 
 
 
-
   transactions = new FormGroup({
     publicKey: new FormControl(''),
     privateKey: new FormControl(''),
@@ -76,20 +75,29 @@ export class TransactionComponent {
      console.log(key)
      console.log(tx)
 
-     this.blockchainService.addTransactionAndCreateBlock({
+    //  this.blockchainService.addTransactionAndCreateBlock({
+    //   transaction:transaction,
+    //   signature: tx.toDER('hex')
+    //  })
+
+     this.blockchainService.addPendingTransaction({
       transaction:transaction,
       signature: tx.toDER('hex')
      })
 
-   const index = this.blockchainService.blockchain.length-1
-   const previousHash = this.blockchainService.blockchain[index].hash
-   const hash = this.blockchainService.calculateBlockHash(index,previousHash,Date.now())
+  //  const index = this.blockchainService.blockchain.length-1
+  //  const previousHash = this.blockchainService.blockchain[index].hash
+  //  const transactions= this.blockchainService.currentBlock.transactions
+  //  const hash = this.blockchainService.calculateBlockHash(index,previousHash,Date.now(),0,transactions)
 
-   console.log("Transaction Signed and Added to Blockchain:");
-    console.log(transaction);
-    console.log(tx);
-    console.log(hash, "HELLO")
-     console.log("Previous Hash   ",previousHash)
+  //  console.log("Transaction Signed and Added to Blockchain:");
+  //   console.log(transaction);
+  //   console.log(tx);
+  //   console.log(hash, "HELLO")
+  //    console.log("Previous Hash   ",previousHash)
+
+
+     this.transactions.reset()
 
    }catch(err){
     console.log(err)
